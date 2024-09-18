@@ -1,0 +1,225 @@
+/*
+=============== 
+global styling
+===============
+*/
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(
+    circle at top,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  height: 100vh;
+  color: #fff;
+  font-family: Oswald, sans-serif;
+}
+
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+=============== 
+header
+===============
+*/
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  text-transform: uppercase;
+}
+
+/*
+=============== 
+title-score
+===============
+*/
+
+.title-score {
+  border: 2px solid #61626f;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  padding: 0.75rem 1rem;
+}
+
+.title {
+  line-height: 1;
+}
+
+.scores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 45%;
+  text-align: center;
+}
+
+.scores div {
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  padding: 0.5rem;
+}
+.scores h6 {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: rgb(0, 0, 211);
+}
+
+.scores h2 {
+  color: #616161;
+}
+
+@media screen and (min-width:576px){
+  .title-score{
+    width: 70%;
+  }
+}
+
+
+@media screen and (min-width:796px) {
+  .title-score{
+    width: 50%;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .title-score{
+    width: 45%;
+  }
+}
+
+/*
+=============== 
+title-score
+===============
+*/
+.game {
+  margin: 5rem auto;
+  padding: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+}
+
+.game-container button {
+  font-size: 3rem;
+  border-radius: 50%;
+  border: 12px solid;
+  width: 37%;
+  height: 40%;
+  cursor: pointer;
+}
+
+.game-container button i {
+  color: rgb(17, 50, 103);
+}
+
+#paper {
+  border-color: rgb(94, 89, 253);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#scissor {
+  border-color: rgb(251, 188, 0);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#rock {
+  border-color: rgb(251, 0, 79);
+  position: absolute;
+  bottom: 0;
+}
+
+
+/*
+=============== 
+logs
+===============
+*/
+
+#logs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+#logs p {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#logs p.latest-log {
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+#logs p.draw {
+  background-color: rgba(236, 150, 0, 0.848);
+}
+
+#logs p.win {
+  background-color: rgba(22, 223, 0, 0.848);
+}
+#logs p.lost {
+  background-color: rgba(222, 0, 0, 0.848);
+}
+
+@media screen and (min-width: 992px) {
+  .game {
+    flex-direction: row;
+  }
+  #logs {
+    justify-content: flex-end;
+    position: absolute;
+    width: 35%;
+    right: 100px;
+    bottom: 20px;
+  }
+}
